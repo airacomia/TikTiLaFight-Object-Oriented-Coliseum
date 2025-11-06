@@ -1,14 +1,18 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Rooster {
     private String name;
     private int hp;
     private int attack;
     private int defense;
-
+    private List<Skill> skills;
     public Rooster(String name, int hp, int attack, int defense){
         this.name = name;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
+
     }
 
     public String getName(){
