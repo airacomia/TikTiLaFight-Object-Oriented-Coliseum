@@ -4,11 +4,45 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("=== PICK YOUR ROOSTER ===");
+        System.out.println("1. Manok na Puti (Balanced)");
+        System.out.println("2. Manok na Itim (High Attack)");
+        System.out.println("3. Manok na Bato (High Defense)");
+        System.out.print("Choose your rooster: ");
+        int playerChoice = scanner.nextInt();
 
-
-        Rooster.ManokNaPuti player = new Rooster.ManokNaPuti("Red Rooster");
-        Rooster.ManokNaPuti enemy = new Rooster.ManokNaPuti("Blue Rooster");
-
+        Rooster player;
+        switch (playerChoice) {
+        case 1:
+            player = new Rooster.ManokNaPuti("Red Rooster");
+            break;
+        case 2:
+            player = new Rooster.ManokNaItim("Red Rooster");
+            break;
+        case 3:
+            player = new Rooster.ManokNaBato("Red Rooster");
+            break;
+        default:
+            System.out.println("Invalid choice! Defaulting to Manok na Puti.");
+            player = new Rooster.ManokNaPuti("Red Rooster");
+            break;
+        }
+        int enemyChoice = 1 + (int) (Math.random() * 3);
+        Rooster enemy;
+        switch (enemyChoice) {
+        case 1:
+            enemy = new Rooster.ManokNaPuti("Blue Rooster");
+            break;
+        case 2:
+            enemy = new Rooster.ManokNaItim("Blue Rooster");
+            break;
+        case 3:
+            enemy = new Rooster.ManokNaBato("Blue Rooster");
+            break;
+        default:
+             enemy = new Rooster.ManokNaPuti("Blue Rooster");
+             break;
+        }
         System.out.println("=== ROOSTER BATTLE ===");
         System.out.println(player.getName() + " vs " + enemy.getName());
         System.out.println();
