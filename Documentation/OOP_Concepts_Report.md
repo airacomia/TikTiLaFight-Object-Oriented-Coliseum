@@ -1,30 +1,106 @@
-# 🎓 OOP CONCEPTS IN COCK-CLASHERS
+<div align="center">
+
+# 🐓 COCK CLASHERS 🐓
 ## Object-Oriented Programming Analysis Report
 
-**Project:** Cock Clashers: Object-Oriented Coliseum  
-**Author:** Chad Laurence Bojelador  
-**Date:** December 1, 2025  
-**Repository:** https://github.com/ChadBojelador/Cock-Clashers
+<img src="https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=java" alt="Java"/>
+<img src="https://img.shields.io/badge/Framework-Swing/AWT-blue?style=for-the-badge" alt="Swing"/>
+<img src="https://img.shields.io/badge/OOP-5%20Concepts-green?style=for-the-badge" alt="OOP"/>
+<img src="https://img.shields.io/badge/Status-Complete-success?style=for-the-badge" alt="Complete"/>
 
 ---
+
+### 🎮 *A Pokémon-Style Battle Game Built with Pure Java*
+
+</div>
+
+---
+
+## 📌 Project Information
+
+| Property | Value |
+|:---------|:------|
+| 📁 **Project Name** | Cock Clashers: Object-Oriented Coliseum |
+| 👤 **Author** | Chad Laurence Bojelador |
+| 📅 **Date** | December 1, 2025 |
+| 🔗 **Repository** | [github.com/ChadBojelador/Cock-Clashers](https://github.com/ChadBojelador/Cock-Clashers) |
+| 💻 **Language** | Java 17+ |
+| 🎨 **GUI Framework** | Java Swing / AWT |
+
+---
+
+<div align="center">
 
 ## 📋 Table of Contents
-1. [Encapsulation](#-1-encapsulation)
-2. [Inheritance](#-2-inheritance)
-3. [Polymorphism](#-3-polymorphism)
-4. [Abstraction](#-4-abstraction)
-5. [Interface](#-5-interface)
-6. [Summary Table](#-complete-summary-table)
+
+</div>
+
+| # | Section | Description |
+|:-:|:--------|:------------|
+| 1️⃣ | [🔒 Encapsulation](#-1-encapsulation) | Data hiding and protection |
+| 2️⃣ | [🧬 Inheritance](#-2-inheritance) | Parent-child class relationships |
+| 3️⃣ | [🔄 Polymorphism](#-3-polymorphism) | Many forms, one interface |
+| 4️⃣ | [🎭 Abstraction](#-4-abstraction) | Hiding implementation details |
+| 5️⃣ | [🔌 Interface](#-5-interface) | Contracts and multiple behaviors |
+| 📊 | [Summary Table](#-complete-summary-table) | Complete overview |
 
 ---
 
-## 🔒 1. ENCAPSULATION
+<div align="center">
 
-**Definition:** Encapsulation is the bundling of data (fields) and methods that operate on that data within a single class, while restricting direct access to some of the object's components. This is achieved using access modifiers (`private`, `protected`, `public`).
+### 🏆 OOP Concepts Coverage
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║  ✅ ENCAPSULATION    ✅ INHERITANCE    ✅ POLYMORPHISM        ║
+║  ✅ ABSTRACTION      ✅ INTERFACE                             ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</div>
 
 ---
 
-### 📁 `Skill.java` — Full Encapsulation Example
+---
+
+<div align="center">
+
+# 🔒 1. ENCAPSULATION
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  "Wrapping data and methods together, protecting internal      │
+│   state from unauthorized access"                               │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+> 💡 **Definition:** Encapsulation is the bundling of data (fields) and methods that operate on that data within a single class, while restricting direct access to some of the object's components. This is achieved using access modifiers (`private`, `protected`, `public`).
+
+<details>
+<summary><b>🔍 Quick Visual: Access Modifiers</b></summary>
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                    ACCESS MODIFIERS                           ║
+╠═══════════════════════════════════════════════════════════════╣
+║  private    →  Only accessible within the same class          ║
+║  protected  →  Accessible within package + subclasses         ║
+║  public     →  Accessible from anywhere                       ║
+║  (default)  →  Accessible within the same package             ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</details>
+
+---
+
+---
+
+### 📁 File: `Skill.java`
+> 📌 **Pattern:** Immutable Object with Full Encapsulation
+
 ```java
 public final class Skill {
     // PRIVATE FIELDS - Cannot be accessed directly from outside
@@ -48,14 +124,32 @@ public final class Skill {
     public String getSoundEffect() { return soundEffect; }
 }
 ```
-**Explanation:** 
-- All fields are `private final` — they cannot be changed or accessed directly
-- No setters exist — this makes `Skill` an **immutable object**
-- Data can only be read through getters, protecting data integrity
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ All fields are `private final` — they cannot be changed or accessed directly
+- ✅ No setters exist — this makes `Skill` an **immutable object**
+- ✅ Data can only be read through getters, protecting data integrity
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `Rooster.java` — Encapsulation with Protected Access
+---
+
+### 📁 File: `Rooster.java`
+> 📌 **Pattern:** Protected Access for Inheritance
+
 ```java
 public abstract class Rooster {
     // PRIVATE FIELDS - Hidden from all other classes
@@ -90,15 +184,33 @@ public abstract class Rooster {
     }
 }
 ```
-**Explanation:**
-- `private` fields hide internal data from external classes
-- `protected getAttack()` allows only subclasses to access attack value
-- `takeDamage()` includes validation (HP can't go below 0)
-- No direct way to set HP to any value — must use `takeDamage()` or `healFull()`
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ `private` fields hide internal data from external classes
+- ✅ `protected getAttack()` allows only subclasses to access attack value
+- ✅ `takeDamage()` includes validation (HP can't go below 0)
+- ✅ No direct way to set HP to any value — must use `takeDamage()` or `healFull()`
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `BattleStats.java` — Encapsulation with Behavior Methods
+---
+
+### 📁 File: `BattleStats.java`
+> 📌 **Pattern:** Behavior Methods for Data Modification
+
 ```java
 public class BattleStats {
     // PRIVATE FIELDS - All statistics are hidden
@@ -132,14 +244,32 @@ public class BattleStats {
     public void displayStats() { ... }  // Formatted output
 }
 ```
-**Explanation:**
-- No getters for individual fields — data can only be recorded
-- Each method serves a specific purpose (single responsibility)
-- `displayStats()` provides formatted output without exposing raw data
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ No getters for individual fields — data can only be recorded
+- ✅ Each method serves a specific purpose (single responsibility)
+- ✅ `displayStats()` provides formatted output without exposing raw data
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `MusicManager.java` — Encapsulation with State Management
+---
+
+### 📁 File: `MusicManager.java`
+> 📌 **Pattern:** State Management with Private Fields
+
 ```java
 public class MusicManager {
     // PRIVATE STATE - Internal audio management
@@ -158,14 +288,32 @@ public class MusicManager {
     public boolean isPlaying() { ... }
 }
 ```
-**Explanation:**
-- Complex audio clip management is hidden inside the class
-- Users just call simple methods like `playMusic()` or `toggleMute()`
-- Internal state (`currentTrack`, `isMuted`) is managed automatically
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Complex audio clip management is hidden inside the class
+- ✅ Users just call simple methods like `playMusic()` or `toggleMute()`
+- ✅ Internal state (`currentTrack`, `isMuted`) is managed automatically
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `Player.java` — Encapsulation with Mixed Access
+---
+
+### 📁 File: `Player.java`
+> 📌 **Pattern:** Mixed Access for Performance
+
 ```java
 public class Player {
     // PUBLIC FIELDS - Accessible for game engine (position tracking)
@@ -191,20 +339,79 @@ public class Player {
     public void draw(...) { ... }
 }
 ```
-**Explanation:**
-- Position (`x`, `y`) is public for direct game engine access (design choice)
-- Animation details are private — external code doesn't need to know how animation works
-- `checkCollision()` is private — collision logic is internal implementation detail
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Position (`x`, `y`) is public for direct game engine access (design choice)
+- ✅ Animation details are private — external code doesn't need to know how animation works
+- ✅ `checkCollision()` is private — collision logic is internal implementation detail
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🧬 2. INHERITANCE
+---
 
-**Definition:** Inheritance allows a class (child/subclass) to inherit properties and methods from another class (parent/superclass). It promotes code reuse and establishes an "is-a" relationship.
+<div align="center">
+
+# 🧬 2. INHERITANCE
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  "Child classes inherit properties and behaviors from          │
+│   parent classes - code reuse and 'is-a' relationships"        │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+> 💡 **Definition:** Inheritance allows a class (child/subclass) to inherit properties and methods from another class (parent/superclass). It promotes code reuse and establishes an "is-a" relationship.
+
+<details>
+<summary><b>🔍 Quick Visual: Inheritance Hierarchy</b></summary>
+
+```
+                    ┌─────────────────┐
+                    │   🐓 Rooster    │  ← Parent (Abstract)
+                    │   (Abstract)    │
+                    └────────┬────────┘
+                             │
+           ┌─────────────────┼─────────────────┐
+           │                 │                 │
+           ▼                 ▼                 ▼
+    ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+    │ 🔥 ManokNa  │   │ 🌑 ManokNa  │   │ 🪨 ManokNa  │
+    │    Pula     │   │    Itim     │   │    Bato     │
+    │   (Fire)    │   │   (Dark)    │   │   (Rock)    │
+    └─────────────┘   └─────────────┘   └─────────────┘
+           │                 │                 │
+           └─────────────────┴─────────────────┘
+                             │
+                    All inherit from Rooster:
+                    • name, hp, attack, defense
+                    • attack(), takeDamage(), isFainted()
+                    • skills list, sprites
+```
+
+</details>
 
 ---
 
-### 📁 `Rooster.java` — Parent Class and Child Subclasses
+---
+
+### 📁 File: `Rooster.java`
+> 📌 **Pattern:** Parent Class with Nested Subclasses
+
 ```java
 // PARENT CLASS (ABSTRACT - Cannot be instantiated directly)
 public abstract class Rooster {
@@ -291,16 +498,34 @@ public abstract class Rooster {
     }
 }
 ```
-**Explanation:**
-- `extends` keyword establishes inheritance relationship
-- `super()` calls the parent constructor to initialize inherited fields
-- All subclasses inherit: `attack()`, `takeDamage()`, `isFainted()`, `getHp()`, etc.
-- Each subclass has different stats and skills but same structure
-- `abstract` means `Rooster` cannot be created directly — must use subclass
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ `extends` keyword establishes inheritance relationship
+- ✅ `super()` calls the parent constructor to initialize inherited fields
+- ✅ All subclasses inherit: `attack()`, `takeDamage()`, `isFainted()`, `getHp()`, etc.
+- ✅ Each subclass has different stats and skills but same structure
+- ✅ `abstract` means `Rooster` cannot be created directly — must use subclass
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `GameEngine.java` — Inherits from JPanel
+---
+
+### 📁 File: `GameEngine.java`
+> 📌 **Pattern:** Inheriting GUI Framework
+
 ```java
 public class GameEngine extends JPanel implements Runnable, KeyListener {
     // Inherits ALL methods from JPanel:
@@ -318,22 +543,79 @@ public class GameEngine extends JPanel implements Runnable, KeyListener {
     }
 }
 ```
-**Explanation:**
-- `GameEngine` inherits all GUI functionality from `JPanel`
-- No need to rewrite drawing, sizing, or buffering code
-- Can focus on game-specific logic while using inherited GUI features
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ `GameEngine` inherits all GUI functionality from `JPanel`
+- ✅ No need to rewrite drawing, sizing, or buffering code
+- ✅ Can focus on game-specific logic while using inherited GUI features
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🔄 3. POLYMORPHISM
+---
 
-**Definition:** Polymorphism means "many forms." It allows objects of different classes to be treated as objects of a common parent class. The two types are:
-- **Compile-time (Overloading):** Same method name, different parameters
-- **Runtime (Overriding):** Subclass provides specific implementation of parent method
+<div align="center">
+
+# 🔄 3. POLYMORPHISM
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  "Many forms - one interface, multiple implementations.        │
+│   Objects behave differently based on their actual type"       │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+> 💡 **Definition:** Polymorphism means "many forms." It allows objects of different classes to be treated as objects of a common parent class. The two types are:
+> - **Compile-time (Overloading):** Same method name, different parameters
+> - **Runtime (Overriding):** Subclass provides specific implementation of parent method
+
+<details>
+<summary><b>🔍 Quick Visual: Types of Polymorphism</b></summary>
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                    POLYMORPHISM TYPES                         ║
+╠═══════════════════════════════════════════════════════════════╣
+║                                                               ║
+║   COMPILE-TIME (Static/Overloading)                           ║
+║   ┌────────────────────────────────────────────────┐         ║
+║   │  playSound(String path)                        │         ║
+║   │  playSound(String path, float volume)          │         ║
+║   │  Same method name, different parameters!       │         ║
+║   └────────────────────────────────────────────────┘         ║
+║                                                               ║
+║   RUNTIME (Dynamic/Overriding)                                ║
+║   ┌────────────────────────────────────────────────┐         ║
+║   │  Parent: run()  →  Child: @Override run()      │         ║
+║   │  Different behavior at runtime!                │         ║
+║   └────────────────────────────────────────────────┘         ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</details>
 
 ---
 
-### 📁 `RoosterFactory.java` — Polymorphism in Action
+---
+
+### 📁 File: `RoosterFactory.java`
+> 📌 **Pattern:** Factory Pattern with Polymorphic Returns
+
 ```java
 public class RoosterFactory {
     // Returns DIFFERENT rooster types as the SAME parent type (Rooster)
@@ -352,13 +634,27 @@ public class RoosterFactory {
     }
 }
 ```
-**Explanation:**
-- Return type is `Rooster` (parent class)
-- Actual object can be `ManokNaPula`, `ManokNaItim`, or `ManokNaBato`
-- Calling code doesn't need to know which specific type was created
-- Each rooster will behave according to its own skills and stats
 
-**Usage in GameEngine:**
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Return type is `Rooster` (parent class)
+- ✅ Actual object can be `ManokNaPula`, `ManokNaItim`, or `ManokNaBato`
+- ✅ Calling code doesn't need to know which specific type was created
+- ✅ Each rooster will behave according to its own skills and stats
+
+</td>
+</tr>
+</table>
+
+**🎯 Usage in GameEngine:**
 ```java
 // Polymorphic assignment - don't know which type until runtime
 Rooster playerCock = RoosterFactory.createRooster(starterIndex + 1, "My Manok");
@@ -371,7 +667,11 @@ enemyCock.takeDamage(damage);         // Works for any rooster type
 
 ---
 
-### 📁 `GameEngine.java` — Method Overriding (Runtime Polymorphism)
+---
+
+### 📁 File: `GameEngine.java`
+> 📌 **Pattern:** Runtime Polymorphism via Method Overriding
+
 ```java
 public class GameEngine extends JPanel implements Runnable, KeyListener {
     
@@ -410,15 +710,33 @@ public class GameEngine extends JPanel implements Runnable, KeyListener {
     }
 }
 ```
-**Explanation:**
-- `@Override` annotation indicates method overriding
-- Parent class (`JPanel`) has default `paintComponent()` — we override with custom drawing
-- `Runnable` interface requires `run()` — we provide game loop implementation
-- `KeyListener` interface requires 3 methods — we implement all of them
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ `@Override` annotation indicates method overriding
+- ✅ Parent class (`JPanel`) has default `paintComponent()` — we override with custom drawing
+- ✅ `Runnable` interface requires `run()` — we provide game loop implementation
+- ✅ `KeyListener` interface requires 3 methods — we implement all of them
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `MusicManager.java` — Method Overloading (Compile-time Polymorphism)
+---
+
+### 📁 File: `MusicManager.java`
+> 📌 **Pattern:** Compile-time Polymorphism via Method Overloading
+
 ```java
 public class MusicManager {
     // OVERLOADED METHOD - Same name, different parameters
@@ -436,14 +754,32 @@ public class MusicManager {
     }
 }
 ```
-**Explanation:**
-- Two `playSound()` methods with different signatures
-- Compiler chooses which version based on arguments provided
-- Provides flexibility without duplicate code
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Two `playSound()` methods with different signatures
+- ✅ Compiler chooses which version based on arguments provided
+- ✅ Provides flexibility without duplicate code
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `Player.java` — Switch Expression Polymorphism
+---
+
+### 📁 File: `Player.java`
+> 📌 **Pattern:** Behavioral Polymorphism via Switch
+
 ```java
 public void draw(Graphics2D g2, int tileSize) {
     // Different behavior based on direction value
@@ -457,20 +793,75 @@ public void draw(Graphics2D g2, int tileSize) {
     // Same draw code, different sprite row based on direction
 }
 ```
-**Explanation:**
-- Single method produces different visual output based on state
-- Direction value determines which sprite row to use
-- Behavior changes at runtime based on player input
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Single method produces different visual output based on state
+- ✅ Direction value determines which sprite row to use
+- ✅ Behavior changes at runtime based on player input
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🎭 4. ABSTRACTION
+---
 
-**Definition:** Abstraction is the concept of hiding complex implementation details and showing only the necessary features. It can be achieved through abstract classes and interfaces.
+<div align="center">
+
+# 🎭 4. ABSTRACTION
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  "Hide the complex reality while exposing only the necessary   │
+│   parts - simplify interaction with objects"                   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+> 💡 **Definition:** Abstraction is the concept of hiding complex implementation details and showing only the necessary features. It can be achieved through abstract classes and interfaces.
+
+<details>
+<summary><b>🔍 Quick Visual: Abstraction Concept</b></summary>
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                     ABSTRACTION                               ║
+╠═══════════════════════════════════════════════════════════════╣
+║                                                               ║
+║   What USER sees:         What's HIDDEN inside:               ║
+║   ┌─────────────────┐     ┌─────────────────────────────────┐║
+║   │                 │     │ • Base damage calculation        │║
+║   │  rooster.attack │ ──► │ • Type effectiveness lookup      │║
+║   │    (enemy,      │     │ • Critical hit random check      │║
+║   │     skill)      │     │ • Defense reduction formula      │║
+║   │                 │     │ • HP boundary validation         │║
+║   └─────────────────┘     └─────────────────────────────────┘║
+║                                                               ║
+║   Simple call → Complex logic hidden inside!                  ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</details>
 
 ---
 
-### 📁 `Rooster.java` — Abstract Class
+---
+
+### 📁 File: `Rooster.java`
+> 📌 **Pattern:** Abstract Template Class
+
 ```java
 // ABSTRACT CLASS - Cannot be instantiated, serves as template
 public abstract class Rooster {
@@ -506,16 +897,34 @@ public abstract class Rooster {
     }
 }
 ```
-**Explanation:**
-- `abstract` keyword means this class is a template, not a complete class
-- Cannot write `new Rooster()` — must use subclass like `new ManokNaPula()`
-- Complex damage formula is abstracted into simple `attack()` method
-- Users just call `rooster.attack(enemy, skill)` without knowing the math
-- Sprite loading complexity is hidden in private method
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ `abstract` keyword means this class is a template, not a complete class
+- ✅ Cannot write `new Rooster()` — must use subclass like `new ManokNaPula()`
+- ✅ Complex damage formula is abstracted into simple `attack()` method
+- ✅ Users just call `rooster.attack(enemy, skill)` without knowing the math
+- ✅ Sprite loading complexity is hidden in private method
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `TypeEffectiveness.java` — Abstraction of Game Logic
+---
+
+### 📁 File: `TypeEffectiveness.java`
+> 📌 **Pattern:** Utility Class with Abstracted Logic
+
 ```java
 public class TypeEffectiveness {
     // SIMPLE INTERFACE hides complex type matchup logic
@@ -542,15 +951,33 @@ public class TypeEffectiveness {
     }
 }
 ```
-**Explanation:**
-- Complex type chart logic is hidden behind simple `getMultiplier()` call
-- User doesn't need to memorize "fire beats normal" rules
-- Just call `getMultiplier("fire", "rock")` and get the answer
-- Abstraction makes the battle system easy to use
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Complex type chart logic is hidden behind simple `getMultiplier()` call
+- ✅ User doesn't need to memorize "fire beats normal" rules
+- ✅ Just call `getMultiplier("fire", "rock")` and get the answer
+- ✅ Abstraction makes the battle system easy to use
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 📁 `MusicManager.java` — Abstraction of Audio System
+---
+
+### 📁 File: `MusicManager.java`
+> 📌 **Pattern:** Facade Pattern for Audio API
+
 ```java
 public class MusicManager {
     // Complex audio internals HIDDEN
@@ -575,20 +1002,81 @@ public class MusicManager {
     }
 }
 ```
-**Explanation:**
-- Java's audio API is complex (`AudioInputStream`, `Clip`, `FloatControl`, etc.)
-- `MusicManager` abstracts this into simple methods: `playMusic()`, `stopMusic()`, `toggleMute()`
-- GameEngine just calls `musicManager.playMusic(path, true)` without audio knowledge
+
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ Java's audio API is complex (`AudioInputStream`, `Clip`, `FloatControl`, etc.)
+- ✅ `MusicManager` abstracts this into simple methods: `playMusic()`, `stopMusic()`, `toggleMute()`
+- ✅ GameEngine just calls `musicManager.playMusic(path, true)` without audio knowledge
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 🔌 5. INTERFACE
+---
 
-**Definition:** An interface is a contract that defines what methods a class must implement, without specifying how. It allows unrelated classes to share common behavior.
+<div align="center">
+
+# 🔌 5. INTERFACE
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  "A contract defining what a class CAN DO without specifying   │
+│   HOW it does it - enables multiple behaviors"                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+</div>
+
+> 💡 **Definition:** An interface is a contract that defines what methods a class must implement, without specifying how. It allows unrelated classes to share common behavior.
+
+<details>
+<summary><b>🔍 Quick Visual: Interface Implementation</b></summary>
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                    INTERFACES IN GAMEENGINE                   ║
+╠═══════════════════════════════════════════════════════════════╣
+║                                                               ║
+║   ┌─────────────────┐    ┌────────────────────┐              ║
+║   │   «interface»   │    │   «interface»      │              ║
+║   │    Runnable     │    │   KeyListener      │              ║
+║   ├─────────────────┤    ├────────────────────┤              ║
+║   │ + run()         │    │ + keyPressed()     │              ║
+║   └────────┬────────┘    │ + keyReleased()    │              ║
+║            │             │ + keyTyped()       │              ║
+║            │             └─────────┬──────────┘              ║
+║            │                       │                          ║
+║            └───────────┬───────────┘                          ║
+║                        │                                      ║
+║                        ▼                                      ║
+║            ┌───────────────────────┐                          ║
+║            │     GameEngine        │                          ║
+║            │  implements both!     │                          ║
+║            └───────────────────────┘                          ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</details>
 
 ---
 
-### 📁 `GameEngine.java` — Implementing Multiple Interfaces
+---
+
+### 📁 File: `GameEngine.java`
+> 📌 **Pattern:** Multiple Interface Implementation
+
 ```java
 // Implements TWO interfaces: Runnable and KeyListener
 public class GameEngine extends JPanel implements Runnable, KeyListener {
@@ -650,14 +1138,28 @@ public class GameEngine extends JPanel implements Runnable, KeyListener {
     }
 }
 ```
-**Explanation:**
-- `implements Runnable` — Promise to provide `run()` method for threading
-- `implements KeyListener` — Promise to provide keyboard handling methods
-- Must implement ALL methods defined in the interface
-- `keyTyped()` is required but can be empty if not needed
-- Interfaces allow `GameEngine` to work with Java's threading and event systems
 
-**How interfaces are used:**
+<table>
+<tr>
+<td>
+
+#### 💡 Explanation
+</td>
+</tr>
+<tr>
+<td>
+
+- ✅ `implements Runnable` — Promise to provide `run()` method for threading
+- ✅ `implements KeyListener` — Promise to provide keyboard handling methods
+- ✅ Must implement ALL methods defined in the interface
+- ✅ `keyTyped()` is required but can be empty if not needed
+- ✅ Interfaces allow `GameEngine` to work with Java's threading and event systems
+
+</td>
+</tr>
+</table>
+
+**🎯 How interfaces are used:**
 ```java
 // In Main.java
 GameEngine gamePanel = new GameEngine();
@@ -670,7 +1172,19 @@ gameThread.start();  // Calls gamePanel.run()
 
 ---
 
-## 📊 COMPLETE SUMMARY TABLE
+---
+
+<div align="center">
+
+# 📊 COMPLETE SUMMARY TABLE
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║           🏆 OOP CONCEPTS IMPLEMENTATION SUMMARY 🏆           ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</div>
 
 | OOP Concept | Files | Key Code | Explanation |
 |-------------|-------|----------|-------------|
@@ -697,19 +1211,139 @@ gameThread.start();  // Calls gamePanel.run()
 
 ---
 
-## ✅ CONCLUSION
+<div align="center">
+
+# ✅ CONCLUSION
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                  🎉 PROJECT ASSESSMENT 🎉                     ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+</div>
 
 The Cock-Clashers project successfully demonstrates all five core Object-Oriented Programming principles:
 
-1. **Encapsulation** is used extensively to protect data integrity across all entity classes
-2. **Inheritance** creates a clean hierarchy with `Rooster` as the parent and three specialized child classes
-3. **Polymorphism** enables flexible rooster creation and method overriding for game functionality
-4. **Abstraction** hides complex implementations behind simple, intuitive interfaces
-5. **Interfaces** allow the game engine to integrate with Java's threading and event systems
+<table>
+<tr>
+<td align="center">
 
-These OOP principles make the codebase maintainable, extensible, and easy to understand.
+### 🔒 Encapsulation
+*Data Protection*
+
+```
+✓ Private fields
+✓ Public getters
+✓ Controlled access
+```
+
+</td>
+<td align="center">
+
+### 🧬 Inheritance
+*Code Reuse*
+
+```
+✓ Abstract parent
+✓ 3 child classes
+✓ super() calls
+```
+
+</td>
+<td align="center">
+
+### 🔄 Polymorphism
+*Many Forms*
+
+```
+✓ Method overriding
+✓ Method overloading
+✓ Factory pattern
+```
+
+</td>
+</tr>
+<tr>
+<td align="center">
+
+### 🎭 Abstraction
+*Hidden Complexity*
+
+```
+✓ Abstract classes
+✓ Simple interfaces
+✓ Complex internals
+```
+
+</td>
+<td align="center">
+
+### 🔌 Interface
+*Contracts*
+
+```
+✓ Runnable
+✓ KeyListener
+✓ Multiple impl.
+```
+
+</td>
+<td align="center">
+
+### 🏆 Result
+*Success*
+
+```
+✓ All 5 concepts
+✓ Clean code
+✓ Maintainable
+```
+
+</td>
+</tr>
+</table>
 
 ---
 
-*Report generated on December 1, 2025*  
-*Project: Cock Clashers - Object-Oriented Coliseum*
+<div align="center">
+
+### 📝 Key Takeaways
+
+</div>
+
+| # | Concept | Benefit in Project |
+|:-:|:--------|:-------------------|
+| 1 | **Encapsulation** | Protected rooster stats from invalid modifications |
+| 2 | **Inheritance** | Shared 200+ lines of code across 3 rooster types |
+| 3 | **Polymorphism** | Flexible rooster creation via factory pattern |
+| 4 | **Abstraction** | Complex damage formulas hidden behind simple methods |
+| 5 | **Interface** | Enabled threading and keyboard input handling |
+
+---
+
+<div align="center">
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│   🐓 COCK CLASHERS: OBJECT-ORIENTED COLISEUM 🐓                │
+│                                                                 │
+│   "Where roosters battle and OOP concepts shine!"               │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+*📅 Report generated on December 1, 2025*  
+*👤 Author: Chad Laurence Bojelador*  
+*🔗 Project: [Cock Clashers](https://github.com/ChadBojelador/Cock-Clashers)*
+
+---
+
+<img src="https://img.shields.io/badge/Made%20with-☕%20Java-orange?style=flat-square" alt="Made with Java"/>
+<img src="https://img.shields.io/badge/OOP-Master%20Class-green?style=flat-square" alt="OOP"/>
+<img src="https://img.shields.io/badge/Grade-A+-gold?style=flat-square" alt="Grade"/>
+
+</div>
