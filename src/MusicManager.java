@@ -6,9 +6,16 @@ public class MusicManager {
     private FloatControl musicVolumeControl;
     private boolean isMuted = false;
     private float currentVolume = 0.6f;
+    private String currentTrack = "";
     
     public void playMusic(String filepath, boolean loop) {
+        // Don't restart if same track is already playing
+        if (filepath.equals(currentTrack) && musicClip != null && musicClip.isRunning()) {
+            return;
+        }
+        
         stopMusic();
+        currentTrack = filepath;
         
         try {
             URL url = getClass().getResource(filepath);
@@ -76,10 +83,13 @@ public class MusicManager {
     }
     
     public void stopMusic() {
-        if (musicClip != null && musicClip.isRunning()) {
+        if (musicClip != null) {
             musicClip.stop();
+            musicClip.flush();
             musicClip.close();
+            musicClip = null;
         }
+        currentTrack = "";
     }
     
     public void setVolume(float volume) {

@@ -90,15 +90,17 @@ public class Player {
     }
 
     private boolean checkCollision(int targetX, int targetY, int[][] map, int tileSize) {
-        // Add small margin (4 pixels) to make hitbox slightly smaller than tile
-        int margin = 4;
+        // Player hitbox size (slightly smaller than visual for better gameplay)
+        int hitboxWidth = tileSize;   // Match display tile size for hitbox
+        int hitboxHeight = tileSize;
+        int margin = 4; // Small margin for smoother movement
         
         // Check all four corners of the player hitbox with margin
         int[][] corners = {
-            {targetX + margin, targetY + margin},                                    // Top-left
-            {targetX + tileSize - 1 - margin, targetY + margin},                    // Top-right
-            {targetX + margin, targetY + tileSize - 1 - margin},                    // Bottom-left
-            {targetX + tileSize - 1 - margin, targetY + tileSize - 1 - margin}     // Bottom-right
+            {targetX + margin, targetY + margin},                                      // Top-left
+            {targetX + hitboxWidth - 1 - margin, targetY + margin},                   // Top-right
+            {targetX + margin, targetY + hitboxHeight - 1 - margin},                  // Bottom-left
+            {targetX + hitboxWidth - 1 - margin, targetY + hitboxHeight - 1 - margin} // Bottom-right
         };
         
         for (int[] corner : corners) {
@@ -111,8 +113,8 @@ public class Player {
             }
             
             int tileType = map[row][col];
-            // Collision with walls (1) and water (0) - only grass (2) is walkable
-            if (tileType != 2) {
+            // Collision with walls (1) and water (0) - grass (2) and path (3) are walkable
+            if (tileType != 2 && tileType != 3) {
                 return true;
             }
         }
@@ -140,8 +142,8 @@ public class Player {
             int srcX = spriteNum * frameWidth;
             int srcY = renderRow * frameHeight;
 
-            // --- DRAWING PLAYER AT 48x48 (1.5x tile size) ---
-            int renderSize = (int)(tileSize * 1.5);
+            // --- DRAWING PLAYER AT 1.5x tile size ---
+            int renderSize = (int)(tileSize * 1.5);  // 48px when tileSize is 32
             int offsetX = (tileSize - renderSize) / 2; // Center the larger sprite
             int offsetY = (tileSize - renderSize) / 2;
             
