@@ -103,7 +103,6 @@
 
 ```java
 public final class Skill {
-    // PRIVATE FIELDS - Cannot be accessed directly from outside
     private final String name;
     private final int damage;
     private final String type;
